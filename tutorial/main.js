@@ -15,6 +15,4 @@ person("Ramlal");
 // *Global Objects
 console.log(__dirname);
 console.log(__filename - __dirname);
-var arr = Array(16);
-console.log(arr);
-console.log(Array(16));
+
