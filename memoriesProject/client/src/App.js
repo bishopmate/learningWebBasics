@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Container, AppBar, Typography, Grow, Grid} from '@material-ui/core';
-import {useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { getPosts } from './actions/posts';
 import memories from './images/memories.png';
@@ -13,7 +13,7 @@ const App = () => {
   const dispatch = useDispatch();
 
   useEffect( () => {
-    dispatch(getPosts);
+    dispatch(getPosts());
   }, [dispatch]);
   return (
     <Container maxWidth = "lg">
