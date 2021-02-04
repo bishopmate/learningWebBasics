@@ -17,8 +17,8 @@ export class Counter extends Component{
     }
     );
     console.log("this.state.count before Callback (just after click to be precise)", this.state.count);
-//     The first parameter is the updated state and the second parameter is the callback function to 
-//     be executed after the state has been updated if it has been updated
+    //     The first parameter is the updated state and the second parameter is the callback function to 
+    //     be executed after the state has been updated if it has been updated
   }
 
   increment2(){
