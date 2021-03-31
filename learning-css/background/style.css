@@ -1,0 +1,27 @@
+body{
+  background-image: linear-gradient(orange, yellow);
+}
+.heading, footer{
+  text-align: center;
+}
+
+.menu{
+  display:flex;
+  flex-flow : row wrap; 
+  justify-content: space-around;
+}
+
+.food{
+  height: 300px;
+  width: 350px;
+  padding: 10px;
+  margin-left: 19px;
+}
+.food h2{
+  height: 30px;
+  font-size: 20px;
+}
+.food img{
+  height: 75%;
+  width: 100%;
+}
