@@ -1,0 +1,33 @@
+header{
+  position: relative;
+  width: 100vw;
+  height: 10vh;
+}
+.sub-headers{
+  position : absolute;
+  top : 0;
+}
+.home-logo{
+  height: 20%;
+  width: 10%;
+  left:0;
+}
+.profile-logo-container{
+  width: 5vw;
+  height: 8vh;
+  position: absolute;
+  top:6%;
+  right: 4%;
+}
+.home-logo img{
+  width:100%;
+  height: auto;
+  max-width: 85px;
+}
+.profile img{
+  width: 100%;
+}
+.profile{
+  font-size: 1em;
+  text-align: center;
+}
