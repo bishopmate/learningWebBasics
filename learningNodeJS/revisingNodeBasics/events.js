@@ -32,7 +32,7 @@ const countDown = (countDownTime) => {
       }      
     },1000);
     countDownEventEmitter.on('count', (secondsLeft)=>{
-      console.log(`${secondsLeft} seconds lift till Event Ends`);
+      console.log(`${secondsLeft} seconds left till Event Ends`);
     })
     countDownEventEmitter.on('packup', ()=>{
       console.log("Are you ready? !!!!!!!!!!");
@@ -43,4 +43,39 @@ const countDown = (countDownTime) => {
   }
 }
 
-countDown(5);
+// countDown(5);
+
+class extendedCountDown extends EventEmitter{
+  constructor(countDownTime){
+    super();
+    this.countDownTime = countDownTime;
+  }
+  startTimer(){
+    const timer = setInterval(() => {
+      this.emit('count', this.countDownTime);
+      if(this.countDownTime == 2){
+        this.emit('packup');
+      }
+      if(this.countDownTime == 0){
+        this.emit('end');
+        clearInterval(timer);
+      }
+      this.countDownTime--;      
+    },1000);
+    this.once('count', (totalSeconds)=>{
+      console.log(`Welcome to Havana, This event is ${totalSeconds} seconds long`);
+    });
+    this.on('count', (secondsLeft)=>{
+      console.log(`${secondsLeft} seconds left till Event Ends`);
+    })
+    this.on('packup', ()=>{
+      console.log("Are you ready? !!!!!!!!!!");
+    })
+    this.on('end', ()=>{
+      console.log("Yoo, Booooooooom..... The event has ended");
+    }) 
+  }
+}
+
+const sevenSeconds = new extendedCountDown(7);
+sevenSeconds.startTimer();
